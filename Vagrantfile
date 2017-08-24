@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "parallels/ubuntu-16.04"
   config.vm.provision :shell, privileged: true, inline: <<-EOF
     sudo apt-get -y update
     sudo apt-get -y install curl git-core
