@@ -196,7 +196,7 @@ class Request(object):
 
         if response.get('object') == 'error':
             errors._raise_from_data(response)
-        if response.get('object') == 'charge' && response.get('status') != 'successful' :
+        if response.get('object') == 'charge' and response.get('status') != 'successful' :
             errors._raise_from_data_2(response)
         return response
 
