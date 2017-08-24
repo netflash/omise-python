@@ -713,6 +713,10 @@ class ChargeTest(_ResourceMixin):
         self.assertEqual(charge.ip, '127.0.0.1')
         self.assertEqual(charge.card.id, 'card_test')
         self.assertEqual(charge.card.last_digits, '4242')
+        #self.assertEqual(charge.status, 'successful')
+        #self.assertEqual(charge.status, 'failed')
+        #self.assertEqual(charge.failure_code, '')
+        #self.assertEqual(charge.failure_code, 'insufficient_fund')
         self.assertRequest(api_call, 'https://api.omise.co/charges/chrg_test')
 
         self.mockResponse(api_call, """{

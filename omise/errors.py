@@ -49,6 +49,18 @@ def _raise_from_data(data):
         raise error(data['message'])
     raise BaseError('unknown error')
 
+def _raise_from_data_2(data):
+    """Raise an error from API response.
+
+    :type data: dict
+    :rtype: None
+    """
+    if isinstance(data, dict):
+        error = _get_error_for(data['status'])
+        if not error:
+            error = BaseError
+        raise error(data['failure_message'])
+    raise BaseError('unknown error')
 
 class BaseError(Exception):
     pass
